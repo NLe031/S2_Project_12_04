@@ -37,3 +37,11 @@ function calcSum(value) {
 function calcPercent(value, sum) {
     return (100 * value / sum);
 }
+
+//Author JS
+
+var reportHTML = "<h1>title</h1>";
+
+for (var i = 0; i <= race; i++) {
+
+}

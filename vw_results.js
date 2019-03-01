@@ -5,8 +5,8 @@
    Tutorial 10
    Case Problem 4
 
-   Author: 
-   Date:   
+   Author: Nicholas Le
+   Date: 02/28/19  
    
    Filename: vw_results.js
    
@@ -30,11 +30,10 @@
 
 /* Callback Function to calculate an array sum */
 function calcSum(value) {
-   totalVotes += value;
+    totalVotes += value;
 }
 
 /* Function to calculate a percentage */
 function calcPercent(value, sum) {
-   return (100*value/sum);
+    return (100 * value / sum);
 }
-

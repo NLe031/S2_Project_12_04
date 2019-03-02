@@ -38,10 +38,29 @@ function calcPercent(value, sum) {
     return (100 * value / sum);
 }
 
-//Author JS
+// Author JS 
+var reportHTML = "<h1>" + raceTitle + "</h1>";
 
-var reportHTML = "<h1>title</h1>";
+//For loop that loops through the candidates
+for (var i = 0; i <= 7; i++) {
+    var totalVotes = 0;
+    votes[i].forEach(calcSum);
+    reportHTML += "<table> <caption>" + race[i] + "</caption>" + "<tr><th> Candidate</th><th>Votes</th></tr>";
+    candidateRows([i], totalVotes);
+    reportHTML += candidateRows;
+    reportHTML += "</table>";
+}
+document.getElementById("section").innerHTML = reportHTML;
 
-for (var i = 0; i <= race; i++) {
-
+//Function that will write individual rows for each candidate
+function candidateRows(raceNum, totalVotes) {
+    var rowHTML = "";
+    for (var j = 0; j <= 2; j++) {
+        var candidateName = candidate[raceNum][j];
+        var candidateParty = party[raceNum][j];
+        var candidateVotes = votes[raceNum][j];
+        var candidatePercent = calcPercent(candidateVotes, totalVotes);
+        rowHTML += "<tr><td>" + candidateName + candidateParty + "</td><td>" + candidateVotes.toLocaleString() + candidatePercent.toFixed(1) + "</td> </tr>";
+    }
+    return rowHTML;
 }
